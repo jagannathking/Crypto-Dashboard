@@ -1,10 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import cryptoRoutes from './routes/crypto.routes.js';
 
-// Load environment variables
-dotenv.config();
+
 
 const app = express();
 
@@ -22,7 +20,6 @@ app.get("/test", (req, res) => {
     res.status(200).json({
         success: true,
         message: "Backend is healthy",
-        timestamp: new Date().toISOString()
     });
 });
 
