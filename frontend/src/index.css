@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* frontend/src/index.css */
+
+/* Apply base styles to the body for a better foundation */
+body {
+  /* Subtle gradient background - adjust colors as needed */
+  @apply bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-900 dark:to-slate-800;
+
+  /* Default text colors */
+  @apply text-gray-900 dark:text-gray-100;
+
+  /* Ensure body takes full height and uses a common sans-serif font */
+  @apply min-h-screen font-sans antialiased;
+}
+
+/* Optional: Add smooth transitions for color changes (e.g., dark mode toggle) */
+body, .bg-white, .dark\:bg-gray-800, .dark\:bg-slate-900, .dark\:bg-slate-800 {
+   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
