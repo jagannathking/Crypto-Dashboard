@@ -138,7 +138,6 @@ export const getMarketChart = async (coinId, days = 7) => {
 export const getCoinList = async () => {
     // Strategy: Try DB first, then cache, then API, then update DB/Cache
     try {
-        // 1. Try fetching from DB (more persistent than cache)
         const dbCoins = await CoinList.find().select('coinId symbol name -_id').lean();
         if (dbCoins && dbCoins.length > 0) {
             console.log("Coin list fetched from DB");
@@ -183,7 +182,6 @@ async function updateCoinListInDB(coins) {
     if (!coins || coins.length === 0) return;
     console.log("Attempting to update CoinList collection in DB...");
     try {
-        // Efficiently update/insert using bulk operations
         const bulkOps = coins.map(coin => ({
             updateOne: {
                 filter: { coinId: coin.coinId },
