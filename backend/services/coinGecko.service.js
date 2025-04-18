@@ -1,6 +1,6 @@
 import axios from 'axios';
-import ApiCache from '../models/ApiCache.model.js';
-import CoinList from '../models/CoinList.model.js';
+import ApiCache from '../models/apiCache.model.js';
+import CoinList from '../models/coinList.model.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

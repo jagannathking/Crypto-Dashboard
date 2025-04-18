@@ -19,5 +19,6 @@ const ApiCacheSchema = new mongoose.Schema({
 });
 
 
-const ApiCache = mongoose.model('ApiCache', ApiCacheSchema);
+const ApiCache = mongoose.model('ApiCache', ApiCacheSchema)
+
 export default ApiCache;
